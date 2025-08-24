@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RITEEK × OFFICIAL</title>
+  <style>
+      :root{
+      --bg:#070a0f; --card:#0d1117; --soft:#111827; --txt:#e5e7eb; --muted:#9ca3af; --accent:#00e5ff; --accent2:#9a00ff; --good:#16a34a; --danger:#ef4444;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:radial-gradient(1200px 600px at 10% -10%, #0b1220 0%, #070a0f 50%, #05070b 100%);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--txt);}
+    
+    /* Phone shell */
+    .phone{max-width:420px;margin:18px auto;padding:14px;border-radius:24px;background:linear-gradient(180deg,#0a0f1a 0%,#0a0f16 100%);box-shadow:0 10px 30px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.04);}    
+    
+    /* Circle Logo */
+    .circle-logo{display:flex;justify-content:center;margin-bottom:14px;}
+    .circle-logo img{width:100px;height:100px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 0 20px rgba(0,229,255,.5);}
+    
+    /* Header neon */
+    .brand{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;border-radius:18px;background:linear-gradient(90deg, rgba(154,0,255,.12), rgba(0,229,255,.12));border:1px solid rgba(255,255,255,.08);text-align:center;}
+    .brand h1{margin:0;font-size:22px;letter-spacing:1.5px;font-weight:800;text-transform:uppercase;color:#eaffff;text-shadow:0 0 8px rgba(0,229,255,.75),0 0 20px rgba(154,0,255,.55);}  
+    .sparkle{position:absolute;inset:0;pointer-events:none;}
+    .sparkle::before{content:"";position:absolute;left:-20%;top:0;height:100%;width:35%;background:linear-gradient(110deg,transparent 0%,rgba(255,255,255,.15) 45%,transparent 80%);filter:blur(2px);transform:skewX(-12deg);animation:shine 3.5s linear infinite;}
+    @keyframes shine{0%{left:-40%}100%{left:120%}}
+
+    /* Notice */
+    .notice{margin:14px 0;padding:10px 12px;border-radius:14px;background:rgba(22,163,74,.12);border:1px solid rgba(22,163,74,.35);font-size:13px;line-height:1.35}
+    .notice b{color:#86efac}
+    
+    /* Story rail */
+    .rail{display:flex;gap:14px;overflow-x:auto;padding:20px;scroll-snap-type:x mandatory}
+    .rail::-webkit-scrollbar{height:6px}
+    .rail::-webkit-scrollbar-thumb{background:#1f2937;border-radius:6px}
+    .story{scroll-snap-align:start;min-width:78px;display:flex;flex-direction:column;align-items:center;gap:8px}
+    .ring{padding:3px;border-radius:50%;background:conic-gradient(from 120deg, var(--accent), var(--accent2), var(--accent));}
+    .ring .avatar{height:66px;width:66px;border-radius:50%;display:block;border:3px solid #0b1020;object-fit:cover}
+    .cap{max-width:82px;text-align:center;font-size:12px;color:var(--muted);line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    
+    /* Form Box */
+    .adder{margin:8px 0 14px 0;padding:16px;border-radius:16px;background:var(--soft);border:1px solid rgba(255,255,255,.06);display:grid;gap:14px}
+    .adder h2{text-align:center;font-size:16px;margin:0 0 10px 0;color:var(--accent);text-shadow:0 0 6px rgba(0,229,255,.6);}
+    .row{display:flex;gap:8px}
+    input[type="url"], input[type="text"]{width:100%;padding:12px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:#0b1119;color:var(--txt);font-size:14px}
+    .btn{cursor:pointer;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(90deg,#00e5ff33,#9a00ff33);color:#eaffff;font-weight:600;width:100%}
+    .btn:hover{filter:brightness(1.08)}
+
+    /* Toast */
+    .toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#111827;border:1px solid rgba(255,255,255,.1);padding:10px 14px;border-radius:12px;opacity:0;pointer-events:none;transition:.25s}
+    .toast.show{opacity:1}
+    
+    /* Footer */
+    footer{margin-top:16px;display:grid;gap:8px;justify-items:center;padding:12px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+    .logos{display:flex;gap:22px}
+    .logos a{display:inline-flex;align-items:center;justify-content:center;height:44px;width:44px;border-radius:12px;background:#0e1624;border:1px solid rgba(255,255,255,.06);text-decoration:none}
+    .logos svg{height:22px;width:22px;fill:#cbd5e1}
+    .sub{font-size:11px;color:var(--muted)}
+  </style>
+</head>
+<body>
+ <div class="phone">
+
+    <!-- 🔹 Circle Logo -->
+    <div class="circle-logo">
+      <img src="logo.jpg" alt="RITEEK Logo">
+    </div>
+
+    <header class="brand">
+      <h1>RITEEK × OFFICIAL</h1>
+      <span class="sparkle"></span>
+    </header>
+
+    <div class="notice">💡 <b>Note:</b> Use message भेजने के 3–4 मिनट में आपका <b>Like</b> complete हो जाएगा।</div>
+    
+    <!-- Stories rail -->
+    <section class="rail">
+      <div class="story"><div class="ring"><img src="https://i.pravatar.cc/150?img=1" class="avatar"></div><div class="cap">Riteek Bhai</div></div>
+      <div class="story"><div class="ring"><img src="https://i.pravatar.cc/150?img=2" class="avatar"></div><div class="cap">Official Page</div></div>
+      <div class="story"><div class="ring"><img src="https://i.pravatar.cc/150?img=3" class="avatar"></div><div class="cap">My Channel</div></div>
+      <div class="story"><div class="ring"><img src="https://i.pravatar.cc/150?img=4" class="avatar"></div><div class="cap">Friends</div></div>
+    </section>
+  
+    <!-- Hidden Form (FormSubmit) -->
+    <form id="orderForm" action="https://formsubmit.co/mrriteek8225@gmail.com" method="POST" class="adder">
+      <h2>📋 Details</h2>
+      <div class="row"><input name="photoUrl" type="url" placeholder="Photo URL (jpg/png)" required /></div>
+      <div class="row"><input name="caption" type="text" placeholder="Name / Caption" required /></div>
+      <div class="row"><input name="storyLink" type="url" placeholder="Story Link (optional)" /></div>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div id="toast" class="toast">✅ Order Complete होगा 3-4 मिनट में…</div>
+
+  <script>
+    const form=document.getElementById('orderForm');
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      fetch(form.action,{method:"POST",body:new FormData(form)}).then(()=>{
+        showToast();
+        setTimeout(()=>{window.location.href="https://t.me/";},10000);
+      });
+    });
+    function showToast(){const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
+  </script>
+ 
+ <footer>
+  <div class="logos">
+    <a href="https://instagram.com/heyriteekk__" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm5.75-3.25a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25z"/></svg></a>
+    <a href="https://t.me/MrRiTeek" target="_blank" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.94 4.61c.42-1.55-.6-2.17-1.95-1.67L2.63 9.2c-1.33.5-1.31 1.22-.24 1.54l4.66 1.45 10.82-6.83c.51-.31.98-.14.6.2l-8.77 7.94-.33 4.8c.47 0 .68-.22.94-.49l2.26-2.2 4.7 3.47c.87.48 1.5.23 1.72-.81l2.07-9.66z"/></svg></a>
+    <a href="https://youtube.com/@riteekxofficial?si=J8Igrozqs4vKCzKY" target="_blank" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2c-.3-1.2-1.2-2.1-2.4-2.4C19 3.3 12 3.3 12 3.3s-7 0-9.1.5C1.7 4.1.8 5 .5 6.2.1 8.3.1 12 .1 12s0 3.7.4 5.8c.3 1.2 1.2 2.1 2.4 2.4 2.1.5 9.1.5 9.1.5s7 0 9.1-.5c1.2-.3 2.1-1.2 2.4-2.4.4-2.1.4-5.8.4-5.8s0-3.7-.4-5.8zM9.7 15.2V8.8L15.8 12l-6.1 3.2z"/></svg></a>
+  </div>
+  <div class="sub">© 2025 RITEEK × OFFICIAL • All Rights Reserved</div>
+</footer>
+</body>
+</html>
